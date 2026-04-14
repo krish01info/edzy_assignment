@@ -1,10 +1,9 @@
-import { useStore } from '../store/useStore';
+
 import { useSnacks } from '../hooks/useSnacks';
 import SnackCard from '../components/snacks/SnackCard';
 import LoadingSkeleton from '../components/ui/LoadingSkeleton';
 import ErrorState from '../components/ui/ErrorState';
 import EmptyState from '../components/ui/EmptyState';
-import type { Snack } from '../types';
 
 export default function SnacksPage() {
   const { data: snacks, isLoading, isError, error, refetch } = useSnacks();

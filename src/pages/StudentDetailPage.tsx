@@ -1,13 +1,12 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { useStudent } from '../hooks/useStudents';
-import { useSnacks } from '../hooks/useSnacks';
+
 import { getInitials, getAvatarColor } from '../utils/avatar';
 import OrderHistoryTable from '../components/orders/OrderHistoryTable';
 import OrderModal from '../components/orders/OrderModal';
 import LoadingSkeleton from '../components/ui/LoadingSkeleton';
 import ErrorState from '../components/ui/ErrorState';
-import type { Snack } from '../types';
 
 export default function StudentDetailPage() {
   const { id } = useParams<{ id: string }>();
