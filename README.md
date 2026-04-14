@@ -1,4 +1,5 @@
-my goal was to completet the project with the max output with in the limited period of time.
+i will  upload the  ai_prompt file before noon , my apoligies that i  didn't uploaded it on time , i hope you will under stand else i tried to complete assigentm.
+My goal was to completet the project with the max output with in the limited period of time.
 
 🍱 CanteenHub — School Canteen Digital Ordering System
 A browser-based prototype for snack browsing, student management, and order tracking.
