@@ -1,5 +1,6 @@
-# 🍱 CanteenHub — School Canteen Digital Ordering System
+my goal was to completet the project with the max output with in the limited period of time.
 
+🍱 CanteenHub — School Canteen Digital Ordering System
 A browser-based prototype for snack browsing, student management, and order tracking.
 
 ## Tech Stack
@@ -66,36 +67,9 @@ Base URL: `http://localhost:3001`
 | POST | `/orders` | Create new order |
 | GET | `/orders?studentId=:id` | Get orders for a student |
 
-## Project Structure
 
-```
-src/
-├── api/           # API client functions
-├── components/
-│   ├── layout/    # Navbar
-│   ├── orders/    # OrderForm, OrderModal, OrderHistoryTable
-│   ├── snacks/    # SnackCard
-│   ├── students/  # StudentListItem, CreateStudentForm
-│   └── ui/        # Toast, LoadingSkeleton, EmptyState, ErrorState
-├── hooks/         # React Query hooks
-├── pages/         # SnacksPage, StudentsPage, StudentDetailPage
-├── store/         # Zustand global store
-└── types/         # TypeScript interfaces
-```
 
-## Features
 
-- ✅ Snack browsing with card grid layout
-- ✅ Order placement with student selector
-- ✅ Student management (list, create, detail view)
-- ✅ Order history per student
-- ✅ Form validation with inline errors (React Hook Form)
-- ✅ Global toast notification system
-- ✅ Loading skeletons, error states, empty states
-- ✅ Responsive design (375px, 768px, 1280px)
-- ✅ localStorage persistence for recent orders
-- ✅ Auto-generated referral codes
-- ✅ Dark theme with glassmorphism effects
 
 ## Seed Data
 
@@ -103,3 +77,16 @@ The `db.json` includes:
 - **8 snacks** with varying prices and order counts
 - **3 students** with referral codes and spending
 - **8 sample orders** linking students to snacks
+
+## libraries/framework which i used are
+react router dom
+axios
+react - query
+zustland
+tailwindcss
+
+#  core dependencies
+npm install react-router-dom lucide-react clsx tailwind-merge
+npm install react-hook-form @tanstack/react-query axios
+npm install -D tailwindcss postcss autoprefixer
+
