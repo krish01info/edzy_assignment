@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, ButtonHTMLAttributes } from 'react';
 
-interface SubmitButtonProps {
+interface SubmitButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading: boolean;
   loadingText: string;
   children: ReactNode;
@@ -20,14 +20,18 @@ export default function SubmitButton({
   children,
   type = 'submit',
   fullWidth = true,
+  className = '',
+  disabled,
+  ...props
 }: SubmitButtonProps) {
   return (
     <button
+      {...props}
       type={type}
-      disabled={isLoading}
+      disabled={isLoading || disabled}
       className={`${
         fullWidth ? 'w-full' : ''
-      } py-3 px-4 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 disabled:from-surface-600 disabled:to-surface-700 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-500/25 active:scale-[0.98] flex items-center justify-center gap-2`}
+      } py-3 px-4 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 disabled:from-surface-600 disabled:to-surface-700 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-500/25 active:scale-[0.98] flex items-center justify-center gap-2 ${className}`}
     >
       {isLoading ? (
         <>

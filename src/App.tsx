@@ -7,6 +7,8 @@ import OfflineBanner from './components/ui/OfflineBanner';
 import SnacksPage from './pages/SnacksPage';
 import StudentsPage from './pages/StudentsPage';
 import StudentDetailPage from './pages/StudentDetailPage';
+import CartModal from './components/orders/CartModal';
+import { useStore } from './store/useStore';
 import { isRetryableError } from './api/errors';
 
 const queryClient = new QueryClient({
@@ -30,6 +32,8 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  const { isCartModalOpen } = useStore();
+
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
@@ -49,6 +53,7 @@ function App() {
             </main>
           </div>
           <ToastContainer />
+          {isCartModalOpen && <CartModal />}
         </BrowserRouter>
       </QueryClientProvider>
     </ErrorBoundary>

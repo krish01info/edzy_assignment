@@ -5,6 +5,7 @@ import type { CreateStudentPayload } from '../types';
 export const useCreateStudent = (callbacks?: {
   onSuccess?: () => void;
   onError?: (error: unknown) => void;
+  showErrorToast?: boolean;
 }) => {
   return useMutationWithToast({
     mutationFn: (payload: CreateStudentPayload) => createStudent(payload),
@@ -13,5 +14,6 @@ export const useCreateStudent = (callbacks?: {
     invalidateKeys: [['students']],
     onSuccess: callbacks?.onSuccess,
     onError: callbacks?.onError,
+    showErrorToast: callbacks?.showErrorToast,
   });
 };

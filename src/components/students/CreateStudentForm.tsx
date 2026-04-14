@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useState, useMemo, useEffect } from 'react';
+import { useMemo, useEffect } from 'react';
 import { useCreateStudent } from '../../hooks/useCreateStudent';
 import { getUserMessage } from '../../api/errors';
 import Modal from '../ui/Modal';
@@ -28,7 +28,6 @@ const generateReferralCode = (): string => {
 
 export default function CreateStudentForm({ onSuccess, onClose }: CreateStudentFormProps) {
   const referralCode = useMemo(() => generateReferralCode(), []);
-  const [apiError, setApiError] = useState('');
 
   const {
     register,
@@ -48,13 +47,10 @@ export default function CreateStudentForm({ onSuccess, onClose }: CreateStudentF
       onSuccess();
       onClose();
     },
-    onError: (error) => {
-      setApiError(getUserMessage(error));
-    },
+    showErrorToast: false, // Prefer inline banner instead
   });
 
   const onFormSubmit = (data: CreateStudentFormValues) => {
-    setApiError('');
     mutation.mutate({ name: data.name, referralCode });
   };
 
@@ -62,7 +58,7 @@ export default function CreateStudentForm({ onSuccess, onClose }: CreateStudentF
     <Modal title="Create New Student" onClose={onClose}>
       <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-5">
         {/* API error */}
-        <ApiErrorBanner message={apiError} />
+        <ApiErrorBanner message={mutation.isError ? getUserMessage(mutation.error) : ''} />
 
         {/* Name input */}
         <div>

@@ -17,6 +17,8 @@ interface UseMutationWithToastOptions<TData, TVariables> {
   onSuccess?: (data: TData) => void;
   /** Callback after a failed mutation (in addition to the toast) */
   onError?: (error: unknown) => void;
+  /** Whether to show a toast on error (defaults to true) */
+  showErrorToast?: boolean;
 }
 
 /**
@@ -33,6 +35,7 @@ export function useMutationWithToast<TData, TVariables>({
   invalidateKeysFromData,
   onSuccess,
   onError,
+  showErrorToast = true,
 }: UseMutationWithToastOptions<TData, TVariables>) {
   const queryClient = useQueryClient();
   const addToast = useStore((s) => s.addToast);
@@ -59,8 +62,10 @@ export function useMutationWithToast<TData, TVariables>({
       onSuccess?.(data);
     },
     onError: (error: unknown) => {
-      const message = getUserMessage(error);
-      addToast(`${errorPrefix}: ${message}`, 'error');
+      if (showErrorToast) {
+        const message = getUserMessage(error);
+        addToast(`${errorPrefix}: ${message}`, 'error');
+      }
       onError?.(error);
     },
   });

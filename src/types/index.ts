@@ -27,6 +27,11 @@ export interface StudentDetail extends Student {
   orders: Order[];
 }
 
+export interface CartItem {
+  snack: Snack;
+  quantity: number;
+}
+
 // ——— Form Payloads ———
 
 export interface CreateStudentPayload {

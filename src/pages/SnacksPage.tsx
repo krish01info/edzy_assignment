@@ -1,7 +1,6 @@
 import { useStore } from '../store/useStore';
 import { useSnacks } from '../hooks/useSnacks';
 import SnackCard from '../components/snacks/SnackCard';
-import OrderModal from '../components/orders/OrderModal';
 import LoadingSkeleton from '../components/ui/LoadingSkeleton';
 import ErrorState from '../components/ui/ErrorState';
 import EmptyState from '../components/ui/EmptyState';
@@ -9,12 +8,6 @@ import type { Snack } from '../types';
 
 export default function SnacksPage() {
   const { data: snacks, isLoading, isError, error, refetch } = useSnacks();
-  const { orderModalOptions, openOrderModal, closeOrderModal } = useStore();
-
-  const handleOrder = (snackId: number) => {
-    const snack = snacks?.find((s) => s.id === snackId);
-    if (snack) openOrderModal({ snack });
-  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -50,20 +43,10 @@ export default function SnacksPage() {
               style={{ animationDelay: `${index * 50}ms` }}
               className="animate-slide-up opacity-0 [animation-fill-mode:forwards]"
             >
-              <SnackCard snack={snack} onOrder={handleOrder} />
+              <SnackCard snack={snack} />
             </div>
           ))}
         </div>
-      )}
-
-      {/* Order Modal */}
-      {orderModalOptions && (
-        <OrderModal
-          preSelectedSnack={orderModalOptions.snack}
-          defaultStudentId={orderModalOptions.defaultStudentId}
-          onClose={closeOrderModal}
-          onSuccess={closeOrderModal}
-        />
       )}
     </div>
   );
