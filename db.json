@@ -1,0 +1,168 @@
+{
+  "snacks": [
+    {
+      "id": 1,
+      "name": "Chicken Sandwich",
+      "price": 3.5,
+      "ordersCount": 144
+    },
+    {
+      "id": 2,
+      "name": "Veggie Wrap",
+      "price": 2.75,
+      "ordersCount": 89
+    },
+    {
+      "id": 3,
+      "name": "Fruit Juice Box",
+      "price": 1.25,
+      "ordersCount": 215
+    },
+    {
+      "id": 4,
+      "name": "Cheese Pizza Slice",
+      "price": 2.5,
+      "ordersCount": 178
+    },
+    {
+      "id": 5,
+      "name": "Chocolate Muffin",
+      "price": 1.75,
+      "ordersCount": 69
+    },
+    {
+      "id": 6,
+      "name": "Granola Bar",
+      "price": 1,
+      "ordersCount": 97
+    },
+    {
+      "id": 7,
+      "name": "Iced Tea",
+      "price": 1.5,
+      "ordersCount": 130
+    },
+    {
+      "id": 8,
+      "name": "French Fries",
+      "price": 2,
+      "ordersCount": 203
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "Aarav Sharma",
+      "referralCode": "STU-A3K9X2",
+      "totalSpent": 15.25
+    },
+    {
+      "id": 2,
+      "name": "Priya Patel",
+      "referralCode": "STU-B7M2Y5",
+      "totalSpent": 5.5
+    },
+    {
+      "id": 3,
+      "name": "Liam Johnson",
+      "referralCode": "STU-C1N8Z4",
+      "totalSpent": 23.25
+    },
+    {
+      "name": "random",
+      "referralCode": "STU-GU5UTG",
+      "totalSpent": 3.5,
+      "id": 4
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "snackId": 1,
+      "quantity": 2,
+      "payableAmount": 7,
+      "createdAt": "2026-04-10T09:30:00Z"
+    },
+    {
+      "id": 2,
+      "studentId": 1,
+      "snackId": 3,
+      "quantity": 1,
+      "payableAmount": 1.25,
+      "createdAt": "2026-04-10T10:15:00Z"
+    },
+    {
+      "id": 3,
+      "studentId": 2,
+      "snackId": 4,
+      "quantity": 1,
+      "payableAmount": 2.5,
+      "createdAt": "2026-04-11T08:45:00Z"
+    },
+    {
+      "id": 4,
+      "studentId": 2,
+      "snackId": 7,
+      "quantity": 2,
+      "payableAmount": 3,
+      "createdAt": "2026-04-11T12:00:00Z"
+    },
+    {
+      "id": 5,
+      "studentId": 3,
+      "snackId": 8,
+      "quantity": 3,
+      "payableAmount": 6,
+      "createdAt": "2026-04-12T11:30:00Z"
+    },
+    {
+      "id": 6,
+      "studentId": 3,
+      "snackId": 1,
+      "quantity": 1,
+      "payableAmount": 3.5,
+      "createdAt": "2026-04-12T13:00:00Z"
+    },
+    {
+      "id": 7,
+      "studentId": 1,
+      "snackId": 5,
+      "quantity": 2,
+      "payableAmount": 3.5,
+      "createdAt": "2026-04-12T14:30:00Z"
+    },
+    {
+      "id": 8,
+      "studentId": 3,
+      "snackId": 6,
+      "quantity": 5,
+      "payableAmount": 5,
+      "createdAt": "2026-04-13T08:00:00Z"
+    },
+    {
+      "studentId": 3,
+      "snackId": 5,
+      "quantity": 5,
+      "payableAmount": 8.75,
+      "createdAt": "2026-04-13T19:18:09.385Z",
+      "id": 9
+    },
+    {
+      "studentId": 4,
+      "snackId": 1,
+      "quantity": 1,
+      "payableAmount": 3.5,
+      "createdAt": "2026-04-13T19:18:52.259Z",
+      "id": 10
+    },
+    {
+      "studentId": 1,
+      "snackId": 1,
+      "quantity": 1,
+      "payableAmount": 3.5,
+      "createdAt": "2026-04-13T19:27:06.415Z",
+      "id": 11
+    }
+  ]
+}
